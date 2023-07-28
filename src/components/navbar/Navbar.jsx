@@ -60,32 +60,41 @@ function Navbar() {
       <Link className="navHover hover:text-main" href={"/"}>
         Home
       </Link>
-      <Link
-        className="navHover flex gap-[3px] items-center hover:text-main"
-        href={"properties"}
-      >
-        Properties
-        <FaCaretDown className="w-2" />
+      <Link className="relative group" href="#">
+        <div className="navHover flex gap-[3px] items-center hover:text-main">
+          Components
+          <FaCaretDown className="w-2" />
+        </div>
+
+        <div className="absolute top-0 w-[160px] pt-8 hidden group-hover:block">
+          <ul className="pt-1 space-y-3 border-t-2 border-main">
+            <li className="hover:text-main">Processor</li>
+            <li className="hover:text-main">Motherboard</li>
+            <li className="hover:text-main">RAM</li>
+            <li className="hover:text-main">Power Supply</li>
+            <li className="hover:text-main">Storage Device</li>
+            <li className="hover:text-main">Others</li>
+          </ul>
+        </div>
       </Link>
+
       <Link
         className="navHover flex gap-[3px] items-center hover:text-main"
         href={"#"}
       >
-        Members
-        <FaCaretDown className="w-2" />
-      </Link>
-      <Link
-        className="navHover flex gap-[3px] items-center hover:text-main"
-        href={"#"}
-      >
-        Pages
-        <FaCaretDown className="w-2" />
+        About Us
       </Link>
       <Link
         className="navHover flex gap-[3px] items-center hover:text-main !border-b-0"
         href={"#"}
       >
-        Contact
+        Contact Us
+      </Link>
+      <Link
+        className="navHover flex gap-[3px] items-center hover:text-main"
+        href={"#"}
+      >
+        Offers
       </Link>
     </>
   );
@@ -131,23 +140,23 @@ function Navbar() {
               <nav className="flex items-center gap-[3.5rem] text-base font-semibold">
                 {menuItems}
               </nav>
-              <div className="flex items-center justify-between text-md gap-7">
-                <div className="flex gap-1 items-center justify-center border-l-[1px] pl-5">
-                  <BiUser className="text-2xl" />
-                  <Link href={"#"} className="text-base">
-                    <span title="Login">Login</span> /{" "}
-                    <span title="Register">Register</span>
-                  </Link>
-                </div>
-                <button
-                  className={` ${
-                    navCustom && "border-2 border-main"
-                  } flex gap-1.5 items-center px-[30px] py-3 rounded-full bg-white text-main  hover:bg-main hover:text-white hover:border-current transition-all duration-200`}
-                >
-                  <BiPlus className="text-xl " />
-                  <span className="text-sm font-bold">Submit Property</span>
-                </button>
+            </div>
+
+            <div className="flex items-center justify-between gap-4 text-white text-md">
+              <div className="flex items-center justify-center gap-1 pl-5">
+                <BiUser className="text-2xl" />
+                <Link href={"#"} className="text-base">
+                  <span title="Login">Login</span> /{" "}
+                  <span title="Register">Register</span>
+                </Link>
               </div>
+              <button
+                className={` ${
+                  navCustom && "border-2 border-main"
+                } flex gap-1.5 items-center px-[30px] py-3 rounded-full bg-white text-main  hover:bg-main hover:text-white hover:border-current transition-all duration-200`}
+              >
+                <span className="text-sm font-bold">PC Builder</span>
+              </button>
             </div>
 
             {/* custom hamburger button */}
