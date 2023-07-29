@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import RootLayout from '@/components/Layouts/RootLayout';
 import Banner from '@/components/UI/Banner';
 import ProductCategory from '@/components/UI/ProductCategory';
+import TopSelling from '@/components/UI/TopSelling';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <Banner />
       <ProductCategory />
+      <TopSelling />
     </>
   )
 }

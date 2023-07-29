@@ -25,9 +25,9 @@ const ProductCategory = () => {
                 {
                     categories.map(category => {
                         return (
-                            <Link href={`/${category.category}`} key={category.id} className="flex flex-col items-center p-3 card-style hover:bg-[#ffbb38] duration-500">
+                            <Link href={`/${category.category}`} key={category.id} className="flex flex-col items-center p-3 duration-200 border-2 rounded-md card-style hover:bg-main hover:text-white border-main">
 
-                                <p className="text-sm font-semibold text-gray-800">
+                                <p className="text-sm font-semibold">
                                     {category.title}
                                 </p>
                             </Link>
