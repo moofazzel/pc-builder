@@ -1,175 +1,99 @@
-import { Col, Row, Carousel } from "antd";
-import {
-  ArrowRightOutlined,
-  CalendarOutlined,
-  CommentOutlined,
-  ProfileOutlined,
-} from "@ant-design/icons";
 import Image from "next/image";
-import DrawingImage from "@/assets/images/banner-images/drawing_image.jpg";
-import EagleImage from "@/assets/images/banner-images/eagle_image.jpg";
+import banner1 from "../../../public/assets/banner/banner1.webp";
+import banner2 from "../../../public/assets/banner/banner2.webp";
+import bannerSide1 from "../../../public/assets/banner/banner-side1.webp";
+import bannerSide2 from "../../../public/assets/banner/banner-side2.webp";
 
-const contentStyle = {
-  height: "425px",
-  color: "#000",
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+import { Autoplay, Pagination } from "swiper/modules";
+
+const Banner = () => {
+  return (
+    <div className="container grid grid-cols-1 gap-4 px-4 mx-auto my-8 xl:px-16 lg:grid-cols-4">
+      <div className="relative col-span-1 lg:col-span-3">
+        <Swiper
+          pagination={true}
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay, Pagination]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <Image
+              src={banner1}
+              alt="Banner Image 1"
+              className={`brightness-75 h-[${undefined}] aspect-[1.3] md:aspect-[1.8]`}
+              layout="responsive"
+              objectFit="cover"
+              objectPosition="center"
+            />
+            <div className="absolute top-[50%] transform translate-y-[-50%] text-white pl-4 md:pl-20 font-semibold">
+              <p className="text-sm md:text-lg">BT HEADPHONE</p>
+              <h2 className="text-lg md:text-5xl leading-9 md:leading-[70px] mb-4">
+                <span className="font-bold">HyperX Cloud III</span>
+                <br />
+                <span>Headset</span>
+              </h2>
+              <button className="w-32 py-2 bg-blue-600 rounded md:py-3">
+                Buy Now
+              </button>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src={banner2}
+              alt="Banner Image 2"
+              className={`brightness-75 h-[${undefined}] aspect-[1.3] md:aspect-[1.8]`}
+              layout="responsive"
+              objectFit="cover"
+              objectPosition="center"
+            />
+            <div className="absolute top-[50%] transform translate-y-[-50%] text-white pl-4 md:pl-20 font-semibold">
+              <p className="text-sm md:text-lg">BT WATCH</p>
+              <h2 className="text-lg md:text-5xl leading-9 md:leading-[70px] mb-4">
+                <span className="font-bold">Xiaomi IMILAB W01</span>
+                <br />
+                <span>Smart Watch</span>
+              </h2>
+              <button className="w-32 py-2 bg-blue-600 rounded md:py-3">
+                Buy Now
+              </button>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+      <div className="col-span-1 h-[400px] flex flex-col md:flex-row lg:flex-col gap-4">
+        <div className="w-full ">
+          <Image
+            src={bannerSide1}
+            alt="Banner Image 1"
+            className={`brightness-75 h-[${undefined}] aspect-[1.6] lg:aspect-[1.2]`}
+            layout="responsive"
+            objectFit="cover"
+            objectPosition="center"
+          />
+        </div>
+        <div className="w-full ">
+          <Image
+            src={bannerSide2}
+            alt="Banner Image 1"
+            className={`brightness-75 h-[${undefined}] aspect-[1.6] lg:aspect-[1.2]`}
+            layout="responsive"
+            objectFit="cover"
+            objectPosition="center"
+          />
+        </div>
+      </div>
+    </div>
+  );
 };
 
-const Banner = () => (
-  <Carousel effect="fade" autoplay style={{ margin: "20px 0px" }}>
-    {/* slider-1 */}
-    <div>
-      <Row>
-        <Col
-          lg={{
-            span: 8,
-          }}
-        >
-          <h1 style={{ fontSize: "50px" }}>
-            LET&apos;S BUILD
-            <br />
-            YOUR CAREER
-          </h1>
-          <div
-            className="line"
-            style={{
-              height: "5px",
-              margin: "20px 0",
-              background: "#000",
-              width: "95%",
-            }}
-          ></div>
-
-          <p
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              width: "90%",
-              color: "gray",
-              margin: "10px 0px",
-            }}
-          >
-            <span>
-              <CalendarOutlined /> FEBRUARY 28, 2023
-            </span>
-            <span>
-              <CommentOutlined /> NO COMMENTS
-            </span>
-            <span>
-              <ProfileOutlined /> HOBBY
-            </span>
-          </p>
-
-          <p style={{ fontSize: "20px" }}>
-            Beauteous before up across felt sheepishly and more mournfully the
-            wow so more flustered and one up pushed salamander collective
-            blinked that iguanodon bid much some since hey far goodness jaguar
-            whil...
-          </p>
-          <p
-            style={{
-              fontSize: "20px",
-              margin: "20px 0px",
-              backgroundColor: "black",
-              color: "white",
-              width: "168px",
-              padding: "2px 5px ",
-              fontWeight: "300",
-              letterSpacing: "3px",
-            }}
-          >
-            Keep Reading <ArrowRightOutlined />
-          </p>
-        </Col>
-
-        <Col
-          lg={{
-            span: 16,
-          }}
-          style={contentStyle}
-        >
-          <Image src={DrawingImage} fill alt="drawing_image" />
-        </Col>
-      </Row>
-    </div>
-    {/* slider-2 */}
-    <div>
-      <Row>
-        <Col
-          lg={{
-            span: 8,
-          }}
-        >
-          <h1 style={{ fontSize: "50px" }}>
-            EAGLE, YOU ARE
-            <br />
-            NOT ALONE
-          </h1>
-          <div
-            className="line"
-            style={{
-              height: "5px",
-              margin: "20px 0",
-              background: "#000",
-              width: "95%",
-            }}
-          ></div>
-
-          <p
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              width: "90%",
-              color: "gray",
-              margin: "10px 0px",
-            }}
-          >
-            <span>
-              <CalendarOutlined /> MARCH 30, 2023
-            </span>
-            <span>
-              <CommentOutlined /> 5 COMMENTS
-            </span>
-            <span>
-              <ProfileOutlined /> NATURE
-            </span>
-          </p>
-
-          <p style={{ fontSize: "20px" }}>
-            A spread opened patient and compulsively one placed seagull goodness
-            python owing snapped yikes equitable when much the much Lorem ipsum
-            dolor sit, amet consectetur adipisicing elit. Eligendi, tenetur!...
-          </p>
-          <p
-            style={{
-              fontSize: "20px",
-              margin: "20px 0px",
-              backgroundColor: "black",
-              color: "white",
-              width: "168px",
-              padding: "2px 5px ",
-              fontWeight: "300",
-              letterSpacing: "3px",
-            }}
-          >
-            Keep Reading <ArrowRightOutlined />
-          </p>
-        </Col>
-
-        <Col
-          lg={{
-            span: 16,
-          }}
-          style={contentStyle}
-        >
-          <Image
-            src={EagleImage}
-            fill
-            alt="eagle_image"
-            style={{ grayScale: "-1" }}
-          />
-        </Col>
-      </Row>
-    </div>
-  </Carousel>
-);
 export default Banner;
