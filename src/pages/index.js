@@ -5,6 +5,7 @@ import Banner from '@/components/UI/Banner';
 import ProductCategory from '@/components/UI/ProductCategory';
 import TopSelling from '@/components/UI/TopSelling';
 import Subscribe from '@/components/UI/Subscribe';
+import Footer from '@/components/UI/Footer';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,6 +16,7 @@ export default function Home() {
       <ProductCategory />
       <TopSelling />
       <Subscribe />
+      <Footer />
     </>
   )
 }
