@@ -117,22 +117,8 @@ function Navbar() {
               <FaBars />
             </button>
 
-            <Link href={"/"} className="flex items-center justify-center">
-              <Image
-                className={`${navCustom ? "hidden" : " block"}`}
-                width={150}
-                height={47}
-                src={logo}
-                alt=""
-              />
-
-              <Image
-                className={`${navCustom ? "block" : "hidden"}`}
-                width={150}
-                height={47}
-                src={logo}
-                alt=""
-              />
+            <Link href={"/"} className="flex items-center justify-center text-base font-bold">
+              Digital Storm
             </Link>
 
             <div
@@ -152,12 +138,20 @@ function Navbar() {
                   <span title="Register">Register</span>
                 </Link>
               </div>
-              <button
-                className={` ${navCustom && "border-2 border-main"
-                  } flex gap-1.5 items-center px-[30px] py-3 rounded-full bg-white text-main  hover:bg-main hover:text-white hover:border-current transition-all duration-200`}
+              {!navCustom ? <Link
+                href="/builder"
+                className={`  flex gap-1.5 items-center px-[30px] py-3 rounded-full text-main transition-all duration-200 font-bold border border-red-500`}
               >
-                <span className="text-sm font-bold">PC Builder</span>
-              </button>
+                PC Builder
+              </Link>
+                :
+                <Link
+                  href="/builder"
+                  className={`  text-white bg-gradient-to-r focus-within:bg-gradient-to-r focus from-rose-400 via-fuchsia-500 to-indigo-500 
+                   flex gap-1.5 items-center px-[30px] py-3 rounded-full  transition-all duration-200 border-red-500 font-bold`}
+                >
+                  PC Builder
+                </Link>}
             </div>
 
             {/* custom hamburger button */}
